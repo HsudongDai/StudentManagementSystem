@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title>学生信息</title>
+    </head>
+    <style>
+        body{
+            margin: 10px;
+        }
+
+        header{
+            width:100%;
+            height:1200px;
+            background-image: url("http://5b0988e595225.cdn.sohucs.com/images/20170917/faee67c0a550497e82a43ef7b104b15a.jpeg");
+            background-size: 100%;
+            }
+        </style>
+
+    <style type="text/css">
+    {% load staticfiles %}
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:35px;
+	color:#333333;
+	border-width: 5px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+
+table.imagetable th {
+	background:#b5cfd2 url('{% static 'images/cell-blue.jpg' %}');
+	border-width: 5px;
+	padding: 16px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 url('{% static 'images/cell-grey.jpg' %}');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+</style>
+    <body>
+    <header>
+        <img src="http://www.tju.edu.cn/images/logo_2016_2.png" alt="tile" >
+        <div align="right">欢迎你 <a href="..">退出</a>
+        </div>
+        <h1 align="center" style="font-size:80px; color: slategrey " >学生选课及成绩列表</h1>
+        <table border=1 align="center" class="imagetable">
+            <tr>
+                <td class="listTable">学号</td>
+                <td class="listTable">课程</td>
+                <td class="listTable">姓名</td>
+                <td class="listTable">成绩</td>
+            </tr>
+            <tr>
+                {% for a in b %}
+                <tr>{% for c in a %}
+                <td>{{ c }}</td>
+                {% endfor %}</tr>
+                {% endfor %}
+            </tr>
+
+        </table></header>
+
+    </body>
+</html>

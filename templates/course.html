@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title style="font-size: 75px; font-style: initial; font-family: '隶书'">查找选课信息</title>
+</head>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 1000px;
+        background: url("http://5b0988e595225.cdn.sohucs.com/images/20170917/71911f3b9d284d5fabeeab1136cff733.jpeg");
+        background-size: 100%;
+    }
+
+</style>
+<body>
+<header>
+    <img src="http://www.tju.edu.cn/images/logo_2016_2.png" alt="logo">
+    <h align="center" style="font-size: 60px; color: beige">
+        <form action="/checkCourses">
+            查找课程基本信息
+            <br>
+
+           <h style="font-size: 40px">输入课程名称 </h>:<input type="str" list="url_list" name="course_selection"/>
+            <datalist id="url_list">
+                <option value="1"/>
+                <option value="2"/>
+                <option value="3"/>
+            </datalist>
+            <input type="submit"/>
+        </form><br>
+        <form action="/checkSelections">
+            查找学生选课信息
+            <br>
+
+            <h style="font-size: 40px" > 输入课程名称</h>:<input type="str" list="url_list" name="course_selection"/>
+            <datalist id="url_list">
+                <option value="1"/>
+                <option value="2"/>
+                <option value="3"/>
+            </datalist>
+            <input type="submit"/>
+        </form>
+    </h>
+</header>
+</body>
+
+</html>

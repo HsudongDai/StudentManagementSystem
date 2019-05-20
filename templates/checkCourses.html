@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- 学生成绩及选课列表 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>学生信息</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 1840px;
+        background: url("http://img.mp.itc.cn/upload/20160611/b0354d8cfac047c7a177ea98b0208d9b_th.jpg");
+        background-size: 100%;
+    }
+</style>
+
+<!-- Javascript goes in the document HEAD -->
+<script type="text/javascript">
+function altRows(id){
+	if(document.getElementsByTagName){
+
+		var table = document.getElementById(id);
+		var rows = table.getElementsByTagName("tr");
+
+		for(i = 0; i < rows.length; i++){
+			if(i % 2 == 0){
+				rows[i].className = "evenrowcolor";
+			}else{
+				rows[i].className = "oddrowcolor";
+			}
+		}
+	}
+}
+
+window.onload=function(){
+	altRows('alternatecolor');
+}
+</script>
+
+<style type="text/css">
+table.altrowstable {
+	font-family: verdana,arial,sans-serif;
+	font-size:35px;
+	color:#333333;
+	border-width: 3px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+}
+table.altrowstable th {
+	border-width: 8px;
+	padding: 1+px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.altrowstable td {
+	border-width: 3px;
+	padding: 16px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+</style>
+
+<body>
+<header>
+    <img src="http://www.tju.edu.cn/images/logo_2016_2.png" alt="tile">
+    <div align="right">
+        欢迎你 
+        <a href="..">退出</a>
+    </div>
+    <h2 align="center" style="font-size: 80px; color: #333333">课程基本信息</h2>
+    <table border=1 align="center" class="altrowstable" id="alternatecolor">
+        <tr>
+            <td class="listTable">课程编号</td>
+            <td class="listTable">课程名</td>
+            <td class="listTable">老师</td>
+            <td class="listTable">学分</td>
+            <td class="listTable">推荐选课年级</td>
+            <td class="listTable">取消年份</td>
+        </tr>
+        <tr>
+            {% for a in b %}
+                <tr>{% for c in a %}
+                    <td>{{ c }}</td>
+                {% endfor %}</tr>
+            {% endfor %}
+        </tr>
+
+    </table>
+</header>
+</body>
+</html>

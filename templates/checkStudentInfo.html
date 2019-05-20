@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2.0,
+            minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>学生信息</title>
+</head>
+<style>
+    body {
+        margin: 10px;
+    }
+
+    header {
+        width: 100%;
+        height: 1200px;
+        background: url("http://img.mp.itc.cn/upload/20160611/aa55f168326146518f50466aba34c75e_th.jpg");
+        background-size: 100%;
+    }
+</style>
+
+<style type="text/css">
+    {% load staticfiles %}
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:35px;
+	color:#333333;
+	border-width: 5px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+
+table.imagetable th {
+	background:#b5cfd2 url('{% static 'images/cell-blue.jpg' %}');
+	border-width: 5px;
+	padding: 16px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 url('{% static 'images/cell-grey.jpg' %}');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+</style>
+<body>
+<header>
+    <img src="http://www.tju.edu.cn/images/logo_2016_2.png" alt="logo" title="首页">
+    <div style="text-align: left; font-size: x-large" align="right">欢迎你 
+        <a href="..">退出</a>
+    </div>
+    <h5>
+        <h1 align="center" style="font-size:100px; color: whitesmoke">学生信息列表</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table border=1 align="center" class="imagetable">
+            <tr>
+                <td class="listTable">姓名</td>
+                <td class="listTable">学号</td>
+                <td class="listTable">入学日期</td>
+                <td class="listTable">年龄</td>
+                <td class="listTable">性别</td>
+                <td class="listTable">家庭住址</td>
+                <td id="profile">班级</td>
+            </tr>
+            <tr>
+                {% for a in res %}
+                    <tr>{% for c in a %}
+                        <td>{{ c }}</td>
+                    {% endfor %}</tr>
+                {% endfor %}
+            </tr>
+        </table>
+    </h5>
+</header>
+</body>
+</html>
+
